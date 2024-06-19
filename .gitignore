@@ -1,0 +1,25 @@
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Dependency directories
+node_modules/
+static/css/output.css
+
+# Local development files
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# IDE files
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
