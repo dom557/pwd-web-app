@@ -6,40 +6,42 @@
     <title>Password Generator</title>
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/htmx.min.js') }}"></script>
+    <!-- Tailwind CSS CDN (for demo purposes) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-4">Password Generator</h1>
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md transition-transform transform hover:scale-105">
+        <h1 class="text-3xl font-bold mb-4 text-indigo-600">Password Generator</h1>
         <form hx-post="/generate" hx-target="#result" hx-swap="innerHTML">
             <div class="mb-4">
                 <label for="length" class="block text-gray-700">Length:</label>
                 <input type="number" id="length" name="length" value="10" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-indigo-300">
             </div>
             <div class="mb-4">
-                <label class="inline-flex items-center">
+                <label class="inline-flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer">
                     <input type="checkbox" id="uppercase" name="uppercase" class="form-checkbox">
                     <span class="ml-2">Include Uppercase Letters</span>
                 </label>
             </div>
             <div class="mb-4">
-                <label class="inline-flex items-center">
+                <label class="inline-flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer">
                     <input type="checkbox" id="lowercase" name="lowercase" class="form-checkbox">
                     <span class="ml-2">Include Lowercase Letters</span>
                 </label>
             </div>
             <div class="mb-4">
-                <label class="inline-flex items-center">
+                <label class="inline-flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer">
                     <input type="checkbox" id="digits" name="digits" class="form-checkbox">
                     <span class="ml-2">Include Digits</span>
                 </label>
             </div>
             <div class="mb-4">
-                <label class="inline-flex items-center">
+                <label class="inline-flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer">
                     <input type="checkbox" id="special" name="special" class="form-checkbox">
                     <span class="ml-2">Include Special Characters</span>
                 </label>
             </div>
-            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Generate Password</button>
+            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300">Generate Password</button>
         </form>
         <div id="result" class="mt-4"></div>
     </div>
